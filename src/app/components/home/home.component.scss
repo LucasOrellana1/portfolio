@@ -1,0 +1,18 @@
+.project-cards {
+    margin: 10px;
+    width: 300px;
+    display: grid;
+  }
+  
+  .mat-card-header {
+    background: #f5f5f5;
+  }
+  
+  .mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .mat-card-content {
+    min-height: 100px;
+  }
