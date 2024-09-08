@@ -1,12 +1,32 @@
 
 
-<header class="header">
-    <div class="header-content">
-        <h1>Hola, soy Lucas Orellana</h1>
-        <p>Desarrollador de Software con experiencia en desarrollo web y aplicaciones móviles. Apasionado por la creación de soluciones innovadoras y el aprendizaje continuo.</p>
-        <a href="#contact" class="cta-button">Contáctame</a>
+<header #scrollContainer class="header">
+    
+    <div [@fadeInOut]="'in'" *ngIf="headerState == 'gret'" class="content">
+      <h1 >Bienvenido a Mi Portafolio</h1>
+      <p>Desarrollador Full Stack</p>
+      <div class="cta-container">
+        <button (click)="changeViewPort()" [@pulseAnimation]="'active'" class="cta-button">Quien soy</button>
+        <button (click)="viewProjects()" [@pulseAnimation]="'active'" class="cta-button">Ver Proyectos</button>
+      </div>
     </div>
-    </header>
 
+    <div  [@fadeInOut]="'in'" *ngIf="headerState == 'who'" class="content">
+        <h1>Soy Lucas Orellana</h1>
+        <p class="who">
+            Soy Lucas Orellana, titulado en Analista Programador Computacional por Duoc UC. 
+            Tengo experiencia en desarrollo web y aplicaciones móviles, destacando en proyectos freelance y 
+            colaborativos. Me apasiona aprender nuevas tecnologías y enfrentar desafíos en un entorno profesional.
+        </p>
+        <div class="cta-container">
+          <button (click)="changeViewPort()" [@pulseAnimation]="'active'" class="cta-button">Quien soy</button>
+          <button (click)="viewProjects()" [@pulseAnimation]="'active'" class="cta-button">Ver Proyectos</button>
+        </div>
+    </div>
+
+
+    <div class="background-animation"></div>
+</header>
+  
 
 

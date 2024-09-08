@@ -23,6 +23,7 @@ export class HomeComponent {
 
     iconRegistry.addSvgIcon('github', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/github.svg'));
     iconRegistry.addSvgIcon('globe', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/globe.svg'));
+    iconRegistry.addSvgIcon('playstore', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/playstore.svg'));
 
   }
 
@@ -47,11 +48,18 @@ export class HomeComponent {
     subtitle: "Desarrollo web",
     description: "Desarrollo de un sitio web para Importadora SyL utilizando Django. Implementación de la base de datos SQL con el ORM de Django y realización de pruebas unitarias."
   },
-  {
+/*   {
     title: "Hackathon de Bomberos",
     subtitle: "Aplicación para bomberos",
     description: "Participación en un hackathon para construir una aplicación que resuelve problemas en la comunidad de bomberos local. Desarrollo enfocado en la solución de necesidades específicas de la comunidad."
-  }
+  } */
 ];
+
+
+  experiences = [
+    { role: 'Apoyo en sistemas institucionales', company: 'Banco de Chile', period: 'Marzo 2024 - Junio 2024', description: 'Desarrollo de aplicaciones web utilizando Angular y Node.js...' },
+    /* { role: 'Diseñador UX', company: 'Design Co.', period: '2018 - 2020', description: 'Diseño de interfaces de usuario y experiencias de usuario para aplicaciones móviles...' },
+    { role: 'Desarrollador Front-end', company: 'Web Solutions', period: '2016 - 2018', description: 'Implementación de diseños responsivos utilizando HTML, CSS y JavaScript...' }, */
+  ];
 
 }
