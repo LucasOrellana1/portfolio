@@ -14,12 +14,11 @@
     <div  [@fadeInOut]="'in'" *ngIf="headerState == 'who'" class="content">
         <h1>Soy Lucas Orellana</h1>
         <p class="who">
-            Soy Lucas Orellana, titulado en Analista Programador Computacional por Duoc UC. 
+            Titulado como Analista Programador Computacional por Duoc UC. 
             Tengo experiencia en desarrollo web y aplicaciones móviles, destacando en proyectos freelance y 
             colaborativos. Me apasiona aprender nuevas tecnologías y enfrentar desafíos en un entorno profesional.
         </p>
         <div class="cta-container">
-          <button (click)="changeViewPort()" [@pulseAnimation]="'active'" class="cta-button">Quien soy</button>
           <button (click)="viewProjects()" [@pulseAnimation]="'active'" class="cta-button">Ver Proyectos</button>
         </div>
     </div>

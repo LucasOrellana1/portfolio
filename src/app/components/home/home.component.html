@@ -10,23 +10,37 @@
           <mat-card-title>{{project.title}}</mat-card-title>
           <mat-card-subtitle>{{project.subtitle}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="project.imageUrl" [alt]="project.title">
+        <img mat-card-image [src]="project.imageUrl" [alt]="project.title" *ngIf="project.imageUrl">
         <mat-card-content>
+          <div *ngIf="project.images" class="image-grid">
+            <img *ngFor="let image of getProjectImages(project)" 
+                 [src]="image" 
+                 [alt]="project.title" 
+                 (click)="openLightbox(image)"
+                 >
+          </div>
           <p>{{project.description}}</p>
         </mat-card-content>
         <mat-card-actions>
 
-          <button mat-button color="primary">
+          <button *ngIf="project.github" (click)="redirectTo(project.github)"  mat-button color="primary">
             <mat-icon aria-hidden="false" aria-label="" svgIcon="github"></mat-icon>
           </button>
-          <button mat-button color="accent">
+          <button *ngIf="project.deployUrl" (click)="redirectTo(project.deployUrl)" mat-button color="accent">
             <mat-icon aria-hidden="false" aria-label="" svgIcon="globe"></mat-icon>
           </button>
           
         </mat-card-actions>
       </mat-card>
     </div>
+  
+    <div *ngIf="lightboxImage" class="lightbox" (click)="closeLightbox()">
+      <img [src]="lightboxImage" alt="Imagen ampliada">
+    </div>
+
   </section>
+
+
 
   <!-- Experience Section -->
   <section class="experience">
@@ -42,6 +56,39 @@
       </div>
     </div>
   </section>
+
+     <!-- Sección de Tecnologías -->
+     <section class="technologies">
+      <h2>Mis Tecnologías</h2>
+      <div class="tech-grid">
+        <mat-chip-listbox>
+          <mat-chip *ngFor="let tech of technologies" [attr.aria-label]="tech.name">
+            <mat-icon matChipAvatar>{{tech.icon}}</mat-icon>
+            {{tech.name}}
+          </mat-chip>
+        </mat-chip-listbox>
+      </div>
+    </section>
+  
 </div>
 
+  <!-- ... (otras secciones del portafolio) ... -->
 
+  <footer class="footer">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+
+        <span class="spacer"></span>
+        <button mat-icon-button aria-label="GitHub" (click)="redirectTo('https://github.com/LucasOrellana1')">
+          <mat-icon svgIcon="github"></mat-icon>
+        </button>
+        <button mat-icon-button aria-label="LinkedIn" (click)="redirectTo('https://linkedin.com/in/lucas-orellana-pérez-6b15272a3')">
+          <mat-icon svgIcon="linkedin"></mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Email" (click)="redirectTo('mailto:orellanalu140@gmail.com')">
+          <mat-icon>email</mat-icon>
+        </button>
+      </mat-toolbar-row>
+
+    </mat-toolbar>
+  </footer>

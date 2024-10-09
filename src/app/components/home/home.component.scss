@@ -1,5 +1,5 @@
-.projects, .experience {
-  padding: 4rem 2rem;
+.projects {
+  padding: 4rem 2rem 0rem 2rem;
   background-color: #f5f5f5;
 }
 
@@ -18,10 +18,92 @@ h2 {
 
 .project-card {
   transition: transform 0.3s ease;
+  mat-card-actions{
+    display:flex;
+    justify-content: space-evenly;
+    mat-icon {
+      transform: scale(1.5);
+    }
+  }
+  p{
+
+    min-height: 5rem;
+    padding: 1rem 0rem 0rem 0rem;
+  }
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+}
+
+// Projects gallery
+
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  padding: 10px;
+  margin: 0;
+  background-color: #f8f8f8;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 columnas */
+
+  gap: 10px;
+  padding: 10px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+
+.project-card p {
+  padding: 10px;
+  margin: 0;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+// Experiencia 
+
+.experience{
+  padding: 4rem 2rem 1rem 2rem;
+  background-color: #f5f5f5;
 }
 
 .timeline {
@@ -54,4 +136,120 @@ h2 {
   font-style: italic;
   color: #888;
   margin-bottom: 1rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.timeline-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.timeline-content .date {
+  font-style: italic;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+// TECNOLOGIAS
+
+.technologies {
+  padding: 2rem 2rem;
+  background-color: #f5f5f5;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.tech-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  //max-width: 1200px;
+  margin: 0 auto;
+}
+
+mat-chip-listbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+mat-chip {
+  margin: 0.5rem;
+  font-size: 1rem;
+
+}
+
+// Footer
+
+.footer {
+  margin-top: auto;
+  background-color: #764ba2;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.copyright {
+  font-size: 0.8em;
+  justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+  .technologies, .experience {
+    padding: 2rem 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .timeline-item {
+    padding: 1.5rem;
+  }
+  
+  .project-card p{
+    min-height: 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(1, 1fr); /* 3 columnas */
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-rows: repeat(2, auto); /* 2 filas */
+  }
 }

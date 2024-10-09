@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng deploy --base-href=/portfolio/ --repo=https://github.com/LucasOrellana1/portfolio.git"
   },
   "private": true,
   "dependencies": {
